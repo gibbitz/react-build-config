@@ -13,7 +13,7 @@ const writeProxyConfig = (proxyPath, remoteServer) => {
         localPath: proxyPath,
         remoteServer
     }
-    const filePath = path.resolve(__dirname, '../config/proxy-config.js')
+    const filePath = path.resolve(__dirname, '../../config/proxy-config.js')
     const contents = `export default [${JSON.stringify(proxyConfig, null, 4)}]`
     fs.writeFileSync(filePath, contents)
     console.log(chalk.hex('#593')(`    ${filePath} -- written!`))
