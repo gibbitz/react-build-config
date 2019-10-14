@@ -1,0 +1,99 @@
+{
+  "name": "@gibbitz/react-build-config",
+  "version": "1.0.0-beta",
+  "description": "Build configuration used for gibbitzStudios Reactjs projects",
+  "main": "tasks/index.js",
+  "bin": "./tasks/index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "build:dev": "cross-env NODE_ENV=development webpack",
+    "lint": "npm run lint:js && npm run lint:sass",
+    "lint:js": "",
+    "lint:sass": "",
+    "server:cold": "babel-node -e 'require(\"./config/nodejs/coldServer.js\").runColdServer()'",
+    "server:cold:dev": "cross-env NODE_ENV=development npm run server:cold",
+    "server:cold:prod": "cross-env NODE_ENV=production npm run server:cold",
+    "server:hot": "cross-env NODE_ENV=development RELOAD=hot babel-node -e 'require(\"./config/nodejs/WebPackDevServerRunner.js\").runWebpackServer()'",
+    "start": "npm run server:hot",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gibbitz/react-build-config.git"
+  },
+  "keywords": [
+    "gibbitzStudios",
+    "reactjs",
+    "webpack",
+    "build"
+  ],
+  "author": "Paul Fox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gibbitz/react-build-config/issues"
+  },
+  "homepage": "https://github.com/gibbitz/react-build-config#readme",
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "cross-env GIT_BRANCH=\"$(git branch | grep \\*)\" node ./config/git/hooks/prepare-commit-msg.js",
+      "commit-msg": "node ./config/git/hooks/commit-msg.js"
+    }
+  },
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "autoprefixer": "^9.4.7",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "child-process": "^1.0.2",
+    "config": "^3.0.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.0",
+    "editorconfig": "^0.15.2",
+    "eslint-plugin-babel": "^4.0.0",
+    "global-npm": "^0.3.0",
+    "gulp": "^4.0.0",
+    "gulp-shell": "^0.6.5",
+    "http-proxy-middleware": "^0.19.1",
+    "husky": "^1.3.1",
+    "jest": "^24.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "postcss-csso": "^3.0.0",
+    "postcss-discard-duplicates": "^4.0.2",
+    "postcss-loader": "^3.0.0",
+    "postcss-merge-rules": "^4.0.2",
+    "postcss-pipeline-webpack-plugin": "^4.1.0",
+    "postcss-url": "^9.0.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-hot-loader": "^4.6.5",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.2.1"
+  },
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "deepmerge": "^3.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "glob": "^7.1.3",
+    "inquirer": "^6.2.2",
+    "mkdirp": "^0.5.1"
+  }
+}

@@ -1,0 +1,8 @@
+import testMerge from './modules/testMerge'
+import TestClass from './modules/TestClass'
+
+console.log(testMerge({ a: 1, b: 2, c: 3 }, { c: 4, d: 5 }))
+const instance = new TestClass()
+console.log(instance, instance.property)
+instance.method('new value')
+console.log(instance, instance.property)

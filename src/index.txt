@@ -1,0 +1,13 @@
+import React, { Fragment } from 'react'
+import { render } from 'react-dom'
+
+import ES6Test from './modules/ES6Test'
+import SASSTest from './modules/SASSTest'
+
+render(
+    <Fragment>
+        <ES6Test />
+        <SASSTest />
+    </Fragment>,
+    document.querySelector('#root')
+)

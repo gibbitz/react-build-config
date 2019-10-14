@@ -1,0 +1,4 @@
+[core]
+    hooksPath = config/git/hooks/
+[commit]
+    template = config/git/.git-commit-template

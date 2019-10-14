@@ -1,0 +1,10 @@
+@import '../scss/partials';
+
+.sass-test {
+  color: $red;
+
+  p {
+    @extend %bordered;
+  }
+}
+

@@ -1,0 +1,11 @@
+@import './partials/variables';
+@import './partials/placeholders';
+
+article {
+  @extend %bordered;
+  padding: 5px;
+  display: flex;
+  > * {
+    flex: 1 0 auto;
+  }
+}

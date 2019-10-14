@@ -1,0 +1,6 @@
+@import '../scss/partials';
+
+div {
+  @extend %bordered;
+  color: $green;
+}
